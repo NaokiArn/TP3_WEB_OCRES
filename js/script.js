@@ -1,8 +1,16 @@
 
 // Fonction appelée lors du click du bouton
 function start() {
+
+  city = document.getElementById('city-input').value ;
+  
+  if (city == "")
+  {
+    city = "Paris";
+  }
+  
   // Création de l'objet apiWeather
-  const apiWeather = new API_WEATHER();
+  const apiWeather = new API_WEATHER(city);
   // Appel de la fonction fetchTodayForecast
 
   apiWeather
@@ -28,4 +36,10 @@ function start() {
       // Affiche une erreur
       console.error(error);
     });
+
+
+    
 }
+
+
+
